@@ -36,7 +36,8 @@ namespace FirstWebForm
             insertCommand.Parameters.AddWithValue("@Rating", Rating.Text);
             insertCommand.ExecuteNonQuery();
             labelSuccessMessage.Text = "Record Added Successfully!";
-           Response.Redirect("ViewAllMovies.aspx"); 
+
+            Response.Redirect("ViewAllMovies.aspx"); 
             myConnection.Close();
             myConnection.Dispose();
 

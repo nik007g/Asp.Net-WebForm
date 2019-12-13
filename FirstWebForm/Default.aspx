@@ -6,7 +6,6 @@
         <h1>ASP.NET Movie Project</h1>
     </div>
    <p>This app is A demo project</p>
-    
-
 
 </asp:Content>
+

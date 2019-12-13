@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 namespace FirstWebForm
 {
-    public partial class ViewAllMovies : System.Web.UI.Page
+    public partial class ViewAllMovies : Page
     {
         SqlConnection myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["WebAppConnectionString"].ConnectionString);
-
           protected void Page_Load(object sender, EventArgs e)
           {
             if (!this.IsPostBack)
@@ -32,20 +26,18 @@ namespace FirstWebForm
             GridView1.DataSource = dataTable;
             GridView1.DataBind();
         }
-
-
           protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
           {
             myConnection.Open();
               int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
               SqlCommand cmd = new SqlCommand("DELETE FROM Movie WHERE MovieId=" + id + "", myConnection);
               cmd.ExecuteNonQuery();
-              Response.Redirect("ViewAllMovies.aspx");
-              labelSuccessDeleteMessage.Text = "Record Deleted Successfully!";
+            Response.Redirect("ViewAllMovies.aspx");
+            labelSuccessDeleteMessage.Text = "Record Deleted Successfully!";
               myConnection.Close();
               myConnection.Dispose();
-          }
 
+        }
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
@@ -55,8 +47,6 @@ namespace FirstWebForm
         {
             myConnection.Open();
             GridViewRow row = GridView1.Rows[e.RowIndex];
-
-            Debug.WriteLine("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii" + GridView1.DataKeys[e.RowIndex].Value);
             int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
             string MovieName = (row.FindControl("txtMovieName") as TextBox).Text;
             string Category = (row.FindControl("txtCategory") as TextBox).Text;
@@ -68,6 +58,7 @@ namespace FirstWebForm
            cmd.Parameters.AddWithValue("@Category", Category);
            cmd.Parameters.AddWithValue("@Rating", Rating);
             cmd.ExecuteNonQuery();
+            UpdateSuccess.Text = "Record Updated Successfully!!";
             myConnection.Close();        
             GridView1.EditIndex = -1;
             this.BindGrid();
@@ -76,6 +67,11 @@ namespace FirstWebForm
         {
             GridView1.EditIndex = -1;
             this.BindGrid();
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
