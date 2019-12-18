@@ -11,17 +11,26 @@ namespace FirstWebForm
 {
 
 
-    public partial class AddMovie
+    public partial class EditMovie1
     {
 
         /// <summary>
-        /// MovieName control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MovieName;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// MovieName1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MovieName1;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -33,13 +42,13 @@ namespace FirstWebForm
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// Category control.
+        /// Category1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Category;
+        protected global::System.Web.UI.WebControls.TextBox Category1;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -51,13 +60,13 @@ namespace FirstWebForm
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// Rating control.
+        /// Rating1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Rating;
+        protected global::System.Web.UI.WebControls.TextBox Rating1;
 
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -78,21 +87,21 @@ namespace FirstWebForm
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
 
         /// <summary>
-        /// AddMovieButton control.
+        /// UpdateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddMovieButton;
+        protected global::System.Web.UI.WebControls.Button UpdateBtn;
 
         /// <summary>
-        /// labelSuccessMessage control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelSuccessMessage;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

@@ -57,3 +57,17 @@
     padding: 5px;
 }
 
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+.pnlBackGround {
+    position: fixed;
+    left: 4px;
+    text-align: center;
+    background-color: White;
+    border: solid 1px black;
+    height:600px;
+    width:360px;
+}

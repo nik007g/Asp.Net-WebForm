@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FirstWebForm.SiteMaster" %>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
-
+    <link href="Content/GridStyle.css" rel="stylesheet" />
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
         <%: Scripts.Render("~/bundles/jquery") %>    
@@ -33,9 +32,7 @@
                     <a class="navbar-brand" runat="server" href="~/">Movie Web Application</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="AddMovie.aspx">Add Movie</a></li>
-                    </ul>
+                    
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="ViewAllMovies.aspx">All Movies </a></li>
                     </ul>
